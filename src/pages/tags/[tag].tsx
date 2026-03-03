@@ -12,8 +12,9 @@ export async function getStaticPaths() {
 
     allPostsData.forEach((post) => {
         if (post.tag) {
-            post.tag.split(',').forEach((tag: string) => {
-                const optimizedTag = tag.trim().toLowerCase().replace(/\s+/g, '');
+            const tagArray = typeof post.tag === 'string' ? post.tag.split(',') : post.tag;
+            tagArray.forEach((tag: any) => {
+                const optimizedTag = tag.toString().trim().toLowerCase().replace(/\s+/g, '');
                 tags.add(optimizedTag);
             });
         }
@@ -41,7 +42,8 @@ export async function getStaticProps({ params }: { params?: { tag: string } } = 
 
     const tagPosts = allPostsData.filter((post) => {
         if (!post.tag) return false;
-        return post.tag.split(',').map((t: string) => t.trim().toLowerCase().replace(/\s+/g, '')).includes(tag);
+        const tagArray = typeof post.tag === 'string' ? post.tag.split(',') : post.tag;
+        return tagArray.map((t: any) => t.toString().trim().toLowerCase().replace(/\s+/g, '')).includes(tag);
     });
 
     const minimalPosts = tagPosts.map(post => ({
@@ -61,11 +63,12 @@ export async function getStaticProps({ params }: { params?: { tag: string } } = 
 
     let originalTag = tag;
     if (tagPosts.length > 0 && tagPosts[0].tag) {
-        const matchedTag = tagPosts[0].tag.split(',').find((t: string) =>
-            t.trim().toLowerCase().replace(/\s+/g, '') === tag
+        const tagArray = typeof tagPosts[0].tag === 'string' ? tagPosts[0].tag.split(',') : tagPosts[0].tag;
+        const matchedTag = tagArray.find((t: any) =>
+            t.toString().trim().toLowerCase().replace(/\s+/g, '') === tag
         );
         if (matchedTag) {
-            originalTag = matchedTag.trim();
+            originalTag = matchedTag.toString().trim();
         }
     }
 

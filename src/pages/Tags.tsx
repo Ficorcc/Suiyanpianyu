@@ -15,9 +15,9 @@ interface TagData {
 function createTagsData(blogData: Post[]): TagData[] {
     const tagDict: { [key: string]: TagData } = {};
     blogData.forEach(item => {
-        const tmpTags = item.tag ? item.tag.split(",") : [];
-        tmpTags.forEach((tag: string) => {
-            const originalTag = tag.trim();
+        const tmpTags = item.tag ? (typeof item.tag === 'string' ? item.tag.split(",") : item.tag) : [];
+        tmpTags.forEach((tag: any) => {
+            const originalTag = tag.toString().trim();
             const optimizedTag = originalTag.toLowerCase().replace(/\s+/g, '');
             if (!tagDict[optimizedTag]) {
                 tagDict[optimizedTag] = { tag: optimizedTag, originalTag, data: [] };

@@ -60,9 +60,9 @@ export async function getStaticProps({ params }: { params?: { id: string } } = {
     const prevPost = currentIndex > 0 ? posts[currentIndex - 1] : null;
     const nextPost = currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null;
 
-    const tags = post.tag ? post.tag.split(',').map((t: string) => t.trim()) : [];
+    const tags = post.tag ? (typeof post.tag === 'string' ? post.tag.split(',').map((t: string) => t.trim()) : post.tag.map((t: any) => t.toString().trim())) : [];
     const relatedPosts = posts.filter(p => {
-        const postTags = p.tag ? p.tag.split(',').map((t: string) => t.trim()) : [];
+        const postTags = p.tag ? (typeof p.tag === 'string' ? p.tag.split(',').map((t: string) => t.trim()) : p.tag.map((t: any) => t.toString().trim())) : [];
         return tags.some((tag: string) => postTags.includes(tag)) && p.id !== post.id;
     });
 
@@ -140,7 +140,7 @@ function Post({ post, relatedPosts, prevPost, nextPost, sameDayPosts }: { post: 
                                 "@type": "WebPage",
                                 "@id": `https://www.suiyan.cc/blog/${post.id}`
                             },
-                            "keywords": post.tag?.split(',').map((t: string) => t.trim()),
+                            "keywords": post.tag ? (typeof post.tag === 'string' ? post.tag.split(',').map((t: string) => t.trim()) : post.tag.map((t: any) => t.toString().trim())) : [],
                             "wordCount": stats.words,
                             "timeRequired": stats.text
                         })
@@ -152,7 +152,7 @@ function Post({ post, relatedPosts, prevPost, nextPost, sameDayPosts }: { post: 
                 <Breadcrumb
                     type="blog"
                     title="正文"
-                    tag={post.tag ? post.tag.split(',')[0].trim() : ''}
+                    tag={post.tag ? (typeof post.tag === 'string' ? post.tag.split(',')[0].trim() : post.tag[0]?.toString().trim()) : ''}
                 />
 
                 <header className="mb-4">
@@ -233,7 +233,7 @@ function Post({ post, relatedPosts, prevPost, nextPost, sameDayPosts }: { post: 
                 {post.tag && (
                     <div className="mt-4 text-sm">
                         <span className="text-text-secondary">标签: </span>
-                        {post.tag.split(',').map((tag: string, index: number) => (
+                        {(typeof post.tag === 'string' ? post.tag.split(',') : post.tag).map((tag: any, index: number) => (
                             <CustomLink
                                 key={index}
                                 href={`/tags/${tag.trim().toLowerCase().replace(/\s+/g, '')}`}

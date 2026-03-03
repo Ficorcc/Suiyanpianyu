@@ -58,9 +58,9 @@ function generateSitemap() {
     const uniqueTags = new Set();
     allPostsData.forEach(post => {
         if (post.tag) {
-            const tmpTags = post.tag.split(",");
-            tmpTags.forEach(tag => {
-                const optimizedTag = tag.trim().toLowerCase().replace(/\s+/g, '');
+            const tagArray = typeof post.tag === 'string' ? post.tag.split(",") : post.tag;
+            tagArray.forEach(tag => {
+                const optimizedTag = tag.toString().trim().toLowerCase().replace(/\s+/g, '');
                 uniqueTags.add(optimizedTag);
             });
         }
