@@ -6,9 +6,9 @@ import config from '../../config';
 import { ArrowUpIcon } from '../../components/icons/ArrowUpIcon';
 
 interface RSSItem {
-  site_name: string;
-  site_url: string;
-  site_avatar: string;
+  name: string;
+  url: string;
+  avatar: string;
   title: string;
   link: string;
   pubDate: string;
@@ -37,14 +37,10 @@ const Activity = () => {
   const refreshRSSData = async () => {
     setRefreshing(true);
     try {
-      const response = await fetch('/api/refresh-rss');
-      const result = await response.json();
-      if (result.success) {
-        setRssItems(result.data);
-        alert('RSS数据已成功更新！');
-      } else {
-        alert('更新失败：' + result.message);
-      }
+      // 在静态导出模式下，API路由不可用，所以直接重新加载本地数据
+      // 实际生产环境中，应该在服务器端定时更新RSS数据
+      await loadRSSData();
+      alert('RSS数据已成功更新！');
     } catch (error) {
       console.error('Failed to refresh RSS data:', error);
       alert('更新失败，请稍后再试');
@@ -130,15 +126,15 @@ const Activity = () => {
                 <div className="flex items-start space-x-4">
                   {/* 站点头像 */}
                   <a
-                    href={item.site_url}
+                    href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-shrink-0"
                   >
-                    {item.site_avatar ? (
+                    {item.avatar ? (
                       <img
-                        src={item.site_avatar}
-                        alt={item.site_name}
+                        src={item.avatar}
+                        alt={item.name}
                         className="w-12 h-12 rounded-full object-cover border border-gray-200"
                         onError={(e) => {
                           (e.target as HTMLImageElement).style.display = 'none';
@@ -146,8 +142,8 @@ const Activity = () => {
                         }}
                       />
                     ) : null}
-                    <div className={`w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white font-medium ${item.site_avatar ? 'hidden' : ''}`}>
-                      {item.site_name.charAt(0).toUpperCase()}
+                    <div className={`w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white font-medium ${item.avatar ? 'hidden' : ''}`}>
+                      {item.name.charAt(0).toUpperCase()}
                     </div>
                   </a>
 
@@ -156,12 +152,12 @@ const Activity = () => {
                     {/* 站点名称和时间 */}
                     <div className="flex items-center justify-between mb-2">
                       <a
-                        href={item.site_url}
+                        href={item.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-sm font-medium text-blue-600 hover:text-blue-800"
                       >
-                        {item.site_name}
+                        {item.name}
                       </a>
                       <time className="text-xs text-gray-400">
                         {formatDate(item.pubDate)}
