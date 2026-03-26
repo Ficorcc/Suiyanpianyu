@@ -26,6 +26,31 @@
         <priority>0.5</priority>
     </url>
     <url>
+        <loc>https://www.suiyan.cc/tags/%E5%8D%9A%E5%AE%A2</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.suiyan.cc/tags/%E6%97%A5%E5%BF%97</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.suiyan.cc/tags/%E4%BA%BA%E7%94%9F</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.suiyan.cc/tags/%E5%8E%86%E7%A8%8B</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.suiyan.cc/tags/%E5%AF%B9%E8%B7%96%E7%82%B9</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://www.suiyan.cc/tags/%E5%85%83%E5%AE%B5%E8%8A%82</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
@@ -42,6 +67,18 @@
     </url>
     <url>
         <loc>https://www.suiyan.cc/tags/%E5%87%BA%E8%A1%8C</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.suiyan.cc/blog/关于对跖点</loc>
+        <lastmod>2026-03-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.suiyan.cc/blog/Life</loc>
+        <lastmod>2026-03-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>

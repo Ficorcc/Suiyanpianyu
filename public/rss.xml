@@ -13,8 +13,8 @@
         <atom:link href="https://vii.ink/feed" rel="self" type="application/rss+xml"/>
         <description>坚持深度阅读，持续写作输出，复盘技术实践。以终生学习对抗不确定性，把固执与坚持，All in 在值得的事情上。</description>
         <language>zh-CN</language>
-        <lastBuildDate>Tue, 03 Mar 2026 20:50:52 GMT</lastBuildDate>
-        <pubDate>Thu, 05 Mar 2026 21:26:48 GMT</pubDate>
+        <lastBuildDate>Wed, 18 Mar 2026 16:16:00 GMT</lastBuildDate>
+        <pubDate>Thu, 26 Mar 2026 01:07:42 GMT</pubDate>
         <generator>SuiYan Blog RSS Generator</generator>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <managingEditor>contact@suiyan.cc (J.sky)</managingEditor>
@@ -30,6 +30,56 @@
             <height>144</height>
             <description>柒色墨笺博客头像</description>
         </image>
+    <item>
+        <title>关于对跖点</title>
+        <link>https://vii.ink/blog/关于对跖点</link>
+        <guid isPermaLink="true">https://vii.ink/blog/关于对跖点</guid>
+        <pubDate>Wed, 18 Mar 2026 16:16:00 GMT</pubDate>
+        <description><![CDATA[]]></description>
+        <content:encoded><![CDATA[对跖点是一个地理上的概念，是地球同一直径两端的点。两点经度相差180°，纬度数值相等且南北半球相反，纬度相同分南北，经度互补分东西，相距约20000千米。对跖点具有地方时相差12小时、季节相反的时空特性。
+
+第一次听说这个概念是在一个月前，看《喜剧之王单口季》，阎鹤祥的决赛演出。
+这一篇文章那个时候就准备写的，一直没得空来整理。
+
+当时听到他说对跖点的时候，不知道怎么了，眼泪突然就在眼圈儿里打转。每个人都有自己的处境和困境，在这个对跖点上，是离你自己的生活和处境最远的地方。从现在站的地方直杵地心，到地球的另一边。
+
+我也去找了一下我家的对跖点，大概在阿根廷的首都布宜诺斯艾利斯的东南方向1000公里的潘帕斯草原的边缘，一个科尔多瓦省南部的农场。我能想象，在宽阔的一望无际的潘帕斯草原上，牛羊成群。跟阎鹤祥说的一样，那里可能连棵树都没有。
+
+因为我也想逃离现在的处境，对跖点只是一个理想的状态，哪怕能到另一个城市，能暂时的逃离都是痛快的，舒服的。就像在北极点你往哪儿走都是往南一样，在对跖点你往任何方向多走一步，都是离你的现实处境又近了一步。你哪怕跳起来10厘米，你也会离你那不起眼的困境更远了1...]]></content:encoded>
+        <dc:creator>contact@suiyan.cc (Ficor)</dc:creator>
+        <category>博客</category>
+        <category>日志</category>
+        <category>人生</category>
+        <category>历程</category>
+        <category>对跖点</category>
+    </item>
+    <item>
+        <title>生命与生活</title>
+        <link>https://vii.ink/blog/Life</link>
+        <guid isPermaLink="true">https://vii.ink/blog/Life</guid>
+        <pubDate>Thu, 05 Mar 2026 21:50:00 GMT</pubDate>
+        <description><![CDATA[]]></description>
+        <content:encoded><![CDATA[我的姑父去世了。
+
+家庭内部原因，平时的走动不多。其实对姑父没有什么特别的印象，如果家族里没有什么事情，大概只有每年节日送节礼的时候能见上一面，一般是见不上的。
+
+八十多了，留着山羊胡的小老头。童年的印象里，姑父做菜很好吃，不爱说话，一说话呵呵的笑着。再也没有更多的印象了。
+
+心梗，前段时间晕倒过一次。孩子带着去医院，死活不去。也是一个有执念的倔老头。他说死也要死在家里。农村这里上了年纪的老人都有的一点执念。可能，冥冥之中也是有那么一点私心吧。前一天还在给元宵节准备菜品，收拾青菜，杀了鸡。晚上去了急诊没有救下。
+
+前段时间，有一个远方的表叔，也是心梗。天气暖和，在家门口种了一棵树。有点热，喝了一点凉白开，突发心梗。幸好就医及时，三次除颤，做了支架。最近应该是康复出院了。身体健康，平时也锻炼，也不胖，年年体检，各项指标都正常。但是生命就是这么捉摸不透，也是这么喜怒无常。它想怎么样就怎么样。
+
+最近看了碎言的博客，有一句话这里引用一下。
+
+姥姥 | 碎言(https://www.suiyan.cc/blog/20260305015805)
+我们这一代人注定会接触很多即将离去的人。每次送走一...]]></content:encoded>
+        <dc:creator>contact@suiyan.cc (Ficor)</dc:creator>
+        <category>祭祀</category>
+        <category>亲人</category>
+        <category>网站</category>
+        <category>博客</category>
+        <category>日志</category>
+    </item>
     <item>
         <title>元宵节</title>
         <link>https://vii.ink/blog/元宵节</link>
