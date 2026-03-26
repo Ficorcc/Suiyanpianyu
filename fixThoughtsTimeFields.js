@@ -65,11 +65,10 @@ function fixThoughtsTimeFields() {
                     }
                 }
                 
-                // 检查是否有author字段
-                if (!data.author) {
-                    // 添加author字段，值为Viiink
-                    data.author = 'Viiink';
-                    console.log(`Added author field to: ${fileName}`);
+                // 确保author字段为Ficor
+                if (data.author !== 'Ficor') {
+                    data.author = 'Ficor';
+                    console.log(`Updated author field to: ${fileName}`);
                 }
                 
                 // 重新生成文件内容

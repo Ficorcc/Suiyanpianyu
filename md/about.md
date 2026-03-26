@@ -1,7 +1,7 @@
 ---
 title: 关于
 author: Ficor
-time: 2026-02-24T12:00:00.000Z
+time: '2026-02-24T12:00:00.000Z'
 description: 关于柒色墨笺的一些信息
 ---
 

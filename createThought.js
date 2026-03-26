@@ -27,7 +27,7 @@ const createThought = (content = '我的片语...') => {
 
   const thoughtContent = `---
 type: thought
-time: '${create_time}'
+timestamp: '${create_time}'
 ---
 
 ${content}

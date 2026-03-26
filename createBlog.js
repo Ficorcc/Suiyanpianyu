@@ -64,7 +64,7 @@ const createBlog = async (title = '博客标题', author = '', tag = '', filedir
   const blogContent = `---
 title: '${title}'
 author: '${author}'
-time: '${create_time}'
+timestamp: '${create_time}'
 tag: '${tag}'
 ai_label: ${ai_label}
 description: '博文的简介'

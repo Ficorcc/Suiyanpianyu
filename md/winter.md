@@ -1,7 +1,7 @@
 ---
 title: 立冬
 id: winter
-tags: 
+tags:
   - 冬
   - 雪
   - 年
