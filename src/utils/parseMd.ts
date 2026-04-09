@@ -10,7 +10,9 @@ function parsePostFile(filePath: string, fileName: string): Post | null {
     try {
         const fileContent = fs.readFileSync(filePath, 'utf8');
         const matterResult = matter(fileContent);
-        const id = fileName.replace(/\.md$/, '');
+        
+        // 优先使用 frontmatter 中的 id 字段，否则使用文件名
+        const id = matterResult.data.id || fileName.replace(/\.md$/, '');
 
         // 截断 description 字段（SEO最佳实践：150字符）
         let description = matterResult.data.description;
