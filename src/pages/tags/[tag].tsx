@@ -20,7 +20,7 @@ export async function getStaticPaths() {
         }
     });
 
-    const paths = Array.from(tags).map((tag) => ({
+    const paths = Array.from(tags).filter(tag => tag.trim() !== '').map((tag) => ({
         params: { tag },
     }));
 
