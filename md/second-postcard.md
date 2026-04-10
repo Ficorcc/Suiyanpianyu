@@ -5,7 +5,7 @@ tags:
   - 明信片
   - 博友
   - 网站
-postId: second-card
+id: second-card
 time: '2026-01-22T10:27:00.000Z'
 author: Ficor
 ---
