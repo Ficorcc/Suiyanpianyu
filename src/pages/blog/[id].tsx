@@ -16,6 +16,7 @@ import config from '@/config';
 import SponsorButton from '@/components/SponsorButton';
 import CommentButton from '@/components/CommentButton';
 import AILabelBadge from '@/components/AILabelBadge';
+import GiscusWrapper from '@/components/GiscusWrapper';
 
 // 动态导入 Giscus 组件以延迟加载
 const Giscus = dynamic(() => import('@giscus/react'), {
@@ -276,20 +277,22 @@ function Post({ post, relatedPosts, prevPost, nextPost, sameDayPosts }: { post: 
                 <section className="">
                     {/* 只在 showComments 为 true 时才渲染 Giscus 组件 */}
                     {showComments && (
-                        <Giscus
-                            key={post.id}
-                            repo={giscusConfig.repo as `${string}/${string}`}
-                            repoId={giscusConfig.repoId}
-                            category={giscusConfig.category}
-                            categoryId={giscusConfig.categoryId}
-                            mapping={giscusConfig.mapping as any}
-                            lang={giscusConfig.lang}
-                            strict="0"
-                            reactionsEnabled="1"
-                            emitMetadata="0"
-                            inputPosition="bottom"
-                            theme="light"
-                        />
+                        <GiscusWrapper>
+                            <Giscus
+                                key={post.id}
+                                repo={giscusConfig.repo as `${string}/${string}`}
+                                repoId={giscusConfig.repoId}
+                                category={giscusConfig.category}
+                                categoryId={giscusConfig.categoryId}
+                                mapping={giscusConfig.mapping as any}
+                                lang={giscusConfig.lang}
+                                strict="0"
+                                reactionsEnabled="1"
+                                emitMetadata="0"
+                                inputPosition="bottom"
+                                theme="light"
+                            />
+                        </GiscusWrapper>
                     )}
                 </section>
 

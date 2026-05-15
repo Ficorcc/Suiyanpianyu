@@ -11,7 +11,7 @@ export default function getSortedThoughtsData(): Post[] {
     }
 
     const fileNames = fs.readdirSync(thoughtsDirectory);
-    const allThoughtsData = fileNames.map(fileName => {
+    const allThoughtsData = fileNames.filter(fileName => fileName.endsWith('.md')).map(fileName => {
         const id = fileName.replace(/\.md$/, '');
         const filePath = path.join(thoughtsDirectory, fileName);
         const fileContent = fs.readFileSync(filePath, 'utf8');

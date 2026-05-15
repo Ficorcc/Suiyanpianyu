@@ -1,8 +1,20 @@
+import { useEffect } from 'react';
 import Link from './Link';
 import config from '@/config';
 import SnsIcons from './SnsIcons';
 
 export default function Footer() {
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = '//gc.zgo.at/count.js';
+        script.setAttribute('data-goatcounter', 'https://suiyan.goatcounter.com/count');
+        script.onerror = () => {
+            script.style.display = 'none';
+        };
+        document.body.appendChild(script);
+    }, []);
+
     return (
         <footer className="my-8">
             <div className="flex flex-col items-center gap-4">
@@ -41,8 +53,6 @@ export default function Footer() {
                     </Link>
                 </p>
             </div>
-            <script data-goatcounter="https://suiyan.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
         </footer>
     );
 }

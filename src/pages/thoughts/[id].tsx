@@ -10,6 +10,7 @@ import getSortedThoughtsData, { getThoughtById } from '../../utils/parseThoughts
 import dynamic from 'next/dynamic';
 import CommentButton from '@/components/CommentButton';
 import giscusConfig from '../../giscusConfigs';
+import GiscusWrapper from '@/components/GiscusWrapper';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
@@ -127,20 +128,22 @@ export default function ThoughtDetail({ thought }: { thought: Post }) {
         <section className="">
           {/* 只在 showComments 为 true 时才渲染 Giscus 组件 */}
           {showComments && (
-            <Giscus
-              key={thought.id}
-              repo={giscusConfig.repo as `${string}/${string}`}
-              repoId={giscusConfig.repoId}
-              category={giscusConfig.category}
-              categoryId={giscusConfig.categoryId}
-              mapping={giscusConfig.mapping as any}
-              lang={giscusConfig.lang}
-              strict="0"
-              reactionsEnabled="1"
-              emitMetadata="0"
-              inputPosition="bottom"
-              theme="light"
-            />
+            <GiscusWrapper>
+              <Giscus
+                key={thought.id}
+                repo={giscusConfig.repo as `${string}/${string}`}
+                repoId={giscusConfig.repoId}
+                category={giscusConfig.category}
+                categoryId={giscusConfig.categoryId}
+                mapping={giscusConfig.mapping as any}
+                lang={giscusConfig.lang}
+                strict="0"
+                reactionsEnabled="1"
+                emitMetadata="0"
+                inputPosition="bottom"
+                theme="light"
+              />
+            </GiscusWrapper>
           )}
         </section>
 

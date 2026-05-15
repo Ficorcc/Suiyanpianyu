@@ -93,9 +93,9 @@ export default function getSortedPostsData(): Post[] {
     const fileNames = fs.readdirSync(postsDirectory);
     console.log('Files in md directory:', fileNames);
     
-    const allPostsData = fileNames.map(fileName => {
-        // 排除 thoughts 目录和 about.md 文件
-        if (fileName === 'thoughts' || fileName === 'about.md') {
+    const allPostsData = fileNames.filter(fileName => fileName.endsWith('.md')).map(fileName => {
+        // 排除 about.md 文件
+        if (fileName === 'about.md') {
             return null;
         }
 
