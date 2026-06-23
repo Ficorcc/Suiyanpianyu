@@ -3,15 +3,9 @@ import config from "../config";
 import linksConfig from "../data/links";
 import Head from "next/head";
 import Breadcrumb from "../components/Breadcrumb";
-import giscusConfig from "@/giscusConfigs";
-import dynamic from "next/dynamic";
 import LinkCard from "../components/LinkCard";
 import { useState } from "react";
-
-const Giscus = dynamic(() => import("@giscus/react").then((mod) => mod.default), {
-    ssr: false,
-    loading: () => <div className="text-center py-4 text-text-secondary">加载评论中...</div>
-});
+import WalineComments from "@/components/WalineComments";
 
 interface LinkSectionProps {
     title: string;
@@ -92,19 +86,7 @@ const Friends = () => {
                     </button>
                 </div>
             ) : (
-                <Giscus
-                    repo={giscusConfig.repo as `${string}/${string}`}
-                    repoId={giscusConfig.repoId}
-                    category={giscusConfig.category}
-                    categoryId={giscusConfig.categoryId}
-                    mapping={giscusConfig.mapping as any}
-                    lang={giscusConfig.lang}
-                    strict="0"
-                    reactionsEnabled="1"
-                    emitMetadata="0"
-                    inputPosition="bottom"
-                    theme="light"
-                />
+                <WalineComments path="/friends" />
             )}
 
         </Layout>

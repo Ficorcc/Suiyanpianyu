@@ -5,7 +5,6 @@ import ReactMarkdown from 'react-markdown';
 import getSortedPostsData from "../../utils/parseMd";
 import { sanitizeHtml } from "../../utils/sanitizeHtml";
 import Layout from "../../components/Layout";
-import dynamic from 'next/dynamic';
 import Head from "next/head";
 import Breadcrumb from '@/components/Breadcrumb';
 import PostList from '@/components/PostList';
@@ -16,19 +15,7 @@ import config from '@/config';
 import SponsorButton from '@/components/SponsorButton';
 import CommentButton from '@/components/CommentButton';
 import AILabelBadge from '@/components/AILabelBadge';
-import GiscusWrapper from '@/components/GiscusWrapper';
-
-// 动态导入 Giscus 组件以延迟加载
-const Giscus = dynamic(() => import('@giscus/react'), {
-    ssr: false,
-    loading: () => (
-        <div className="flex items-center justify-center py-8">
-            <div>加载评论中...</div>
-        </div>
-    )
-});
-
-import giscusConfig from '../../giscusConfigs';
+import WalineComments from '@/components/WalineComments';
 
 export async function getStaticPaths() {
     const posts = getSortedPostsData();
@@ -275,24 +262,8 @@ function Post({ post, relatedPosts, prevPost, nextPost, sameDayPosts }: { post: 
                 </div>
 
                 <section className="">
-                    {/* 只在 showComments 为 true 时才渲染 Giscus 组件 */}
                     {showComments && (
-                        <GiscusWrapper>
-                            <Giscus
-                                key={post.id}
-                                repo={giscusConfig.repo as `${string}/${string}`}
-                                repoId={giscusConfig.repoId}
-                                category={giscusConfig.category}
-                                categoryId={giscusConfig.categoryId}
-                                mapping={giscusConfig.mapping as any}
-                                lang={giscusConfig.lang}
-                                strict="0"
-                                reactionsEnabled="1"
-                                emitMetadata="0"
-                                inputPosition="bottom"
-                                theme="light"
-                            />
-                        </GiscusWrapper>
+                        <WalineComments path={`/blog/${post.id}`} />
                     )}
                 </section>
 

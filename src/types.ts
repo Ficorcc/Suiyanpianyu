@@ -64,18 +64,6 @@ export interface SnsLink {
   iconComponent: string;
 }
 
-// Giscus配置类型
-export interface GiscusConfig {
-  repo: string;
-  repoId: string;
-  category: string;
-  categoryId: string;
-  mapping: string;
-  strict: string;
-  theme: string;
-  lang: string;
-}
-
 // 组件Props类型
 export interface LayoutProps {
   children: React.ReactNode;
